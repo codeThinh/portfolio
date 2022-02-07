@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import Header from "./components/Header"
+import Aside from "./components/Aside"
+import Hero from "./components/Hero"
+import About from "./components/About"
+import Projects from "./components/Projects"
+import Contact from "./components/Contact"
+import Footer from "./components/Footer"
+import "./styles.css"
+import Headroom from "react-headroom"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+
+export default function App(props) {
+
+    // function handleBackClick() {
+    //     articleRef.current.scrollIntoView({ behavior: 'smooth' })
+    // }
+
+    return (
+        <div className="app--container">
+            <Header />
+            <div className="aside--container">
+                <Aside />
+            </div>
+            <div className="main--container">
+                <Hero />
+                <About />
+                <Projects />
+                <Contact />
+                <div id="footer">
+                   <Footer />
+                </div>
+            </div>
+
+        </div>
+
+    )
 }
-
-export default App;
