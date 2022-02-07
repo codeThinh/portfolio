@@ -6,24 +6,43 @@ import About from "./components/About"
 import Projects from "./components/Projects"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
+import SideDrawer from "./components/SideDrawer"
 import "./styles.css"
-import Headroom from "react-headroom"
+import Backdrop from "./components/Backdrop"
+import { render } from "@testing-library/react"
 
 
 
+class App extends React.Component {
+    state = {
+        sideDrawerOpen: false
+    }
 
-export default function App(props) {
+    drawerToggleClickHandler = () => {
+        this.setState((prev) => {
+            return {sideDrawerOpen: !prev.sideDrawerOpen};
+        });
+    };
 
-    // function handleBackClick() {
-    //     articleRef.current.scrollIntoView({ behavior: 'smooth' })
-    // }
+    backdropClickHandler = () => {
+        this.setState({sideDrawerOpen: false});
+    };
+
+    render() {
+        let backdrop;
+
+        if(this.state.sideDrawerOpen) {
+            backdrop = <Backdrop click={this.backdropClickHandler} />;
+        }
 
     return (
         <div className="app--container">
-            <Header />
+            <Header drawerToggleClickHandler={this.drawerToggleClickHandler} />
             <div className="aside--container">
                 <Aside />
             </div>
+            <SideDrawer show={this.state.sideDrawerOpen} />
+            {backdrop}
             <div className="main--container">
                 <Hero />
                 <About />
@@ -38,3 +57,6 @@ export default function App(props) {
 
     )
 }
+}
+
+export default App

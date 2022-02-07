@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
-import Headroom from "react-headroom"
 import "../styles.css"
+import HamburgerToggleButton from "./HamburgerToggleButton"
 
 export default function Header(props) {
     return (
@@ -13,6 +13,9 @@ export default function Header(props) {
                     <li><a href ="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <div className="header--toggle-button">
+                <HamburgerToggleButton click={props.drawerToggleClickHandler} />
+            </div>
         </header>
     )
 }
