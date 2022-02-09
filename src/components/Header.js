@@ -5,7 +5,7 @@ import HamburgerToggleButton from "./HamburgerToggleButton"
 export default function Header(props) {
     return (
         <header className="header--container">
-            <h3>code</h3><h3>Thinh</h3>
+            <a id="logo" href="#"><h3>code</h3><h3>Thinh</h3></a>
             <nav>
                 <ul className="header--nav">
                     <li><a href ="#about">About</a></li>

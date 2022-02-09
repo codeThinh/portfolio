@@ -9,6 +9,7 @@
   --text-second-accent: rgba(226, 192, 128);
   --text-tertiary-accent: rgba(123, 123, 123);
   margin: 0;
+  padding: 0;
 }
 
 html {
@@ -32,8 +33,7 @@ li {
 .app--container {
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
-  max-width: 100%;
+  width: 100%;
 }
 
 h1 {
@@ -52,6 +52,86 @@ h3 {
 
 h4 {
   color: var(--primary-color);
+  padding-bottom: 1rem;
+}
+
+/* 
+Arrow Button 
+*/
+
+.scroll-down {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mouse {
+  width: 2.5rem;
+  height: 5rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+}
+
+.mouse span {
+  width: 1rem;
+  height: 1rem;
+  background: var(--accent-color);
+  display: block;
+  border-radius: 50%;
+  margin: auto;
+  animation: move-wheel 2s linear infinite;
+}
+
+.arrow span {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid transparent;
+  border-right-color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+  transform: rotate(45deg);
+  animation: arrow-down 1s alternate infinite;
+}
+
+@keyframes move-wheel {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(1rem);
+  }
+}
+
+@keyframes arrow-down {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 720px) {
+  .scroll-down {
+    display: none;
+  }
 }
 
 /* 
@@ -68,8 +148,9 @@ header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 2rem;
+  height: 2.5rem;
   position: fixed;
+  z-index: 500;
 }
 
 header ul {
@@ -94,12 +175,13 @@ header ul a:hover {
 }
 
 header h3 {
-  padding-left: 1rem;
+  font-size: 1rem;
+  padding: 0 1rem 0;
   color: var(--primary-color);
 }
 
 header h3 + h3 {
-  padding: 0;
+  font-size: 1rem;
   color: var(--accent-color);
 }
 
@@ -158,8 +240,7 @@ SideDrawer
   position: fixed;
   top: 0;
   left: 0;
-  width: 70%;
-  max-width: 400px;
+  width: 65%;
   z-index: 200;
   transform: translateX(-100%);
   transition: transform 0.3s ease-out;
@@ -179,11 +260,11 @@ SideDrawer
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 
 .side-drawer--container li {
-  margin: 0.5rem 0;
+  margin: 1rem 1rem;
 }
 
 .backdrop {
@@ -259,37 +340,38 @@ svg:hover {
 Hero CSS 
 */
 
-main {
+.hero--container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
-  max-width: 80%;
+  min-height: 100vh;
+  max-width: 90%;
   text-align: left;
+  background: white;
 }
 
-main h4 {
+.hero--container h4 {
   color: var(--accent-color);
   padding-bottom: 2rem;
 }
 
-main h1 {
+.hero--container h1 {
   padding-bottom: 1rem;
 }
 
-main h1 + h1 {
+.hero--container h1 + h1 {
   color: var(--text-tertiary-accent);
   padding-bottom: 2rem;
 }
 
-main h2 {
-  max-width: 500px;
+.hero--container h2 {
+  width: 100%;
   color: var(--text-tertiary-accent);
   padding-bottom: 2rem;
   font-size: 1rem;
 }
 
-main button {
+.hero--container button {
   color: var(--primary-color);
   background: none;
   border: 1px solid var(--primary-color);
@@ -297,7 +379,7 @@ main button {
   padding: 1rem;
 }
 
-main button {
+.hero--containe button {
   color: var(--primary-color);
   background: none;
   border: 1px solid var(--primary-color);
@@ -305,7 +387,7 @@ main button {
   padding: 1rem;
 }
 
-main button:hover {
+.hero--containe button:hover {
   background: rgba(45, 129, 184, 0.22);
   transition: 0.4s;
   cursor: pointer;
@@ -326,23 +408,27 @@ About CSS
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  max-width: 80%;
-  height: 100vw;
-  margin-bottom: 25rem;
+  min-height: 100vw;
+  width: 90%;
+  background: green;
 }
 
 .about--container {
+  max-width: 90%;
   font-size: 1.5rem;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column wrap-reverse;
+  align: center;
   text-align: left;
-  width: 40%;
+  padding: 4rem;
+  background: red;
 }
 
 .about--img img {
+  max-width: 90%;
   border-radius: 50%;
   border: 0.25rem solid var(--accent-color);
-  margin: 1rem;
+  margin: 5rem;
 }
 
 /* 
@@ -358,17 +444,19 @@ Projects CSS
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  width: 100%;
+  width: 90%;
   margin-bottom: 25rem;
 }
 
 .projects--card {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 0;
   padding: 0;
+  max-width: 90%;
+  min-height: 50vh;
 }
 
 .projects--img-border {
@@ -390,16 +478,34 @@ Projects CSS
 }
 
 .projects--img {
+  width: 500px;
+  max-width: 90%;
   background: transparent;
 }
 
+.projects--img:hover {
+  webkit-filter: blur(4px);
+  filter: blur(4px);
+}
+
 .projects--info {
-  text-align: right;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 500px;
+  max-width: 90%;
+  padding: 2rem;
 }
 
 .projects--info h4 {
   color: var(--text-second-accent);
   padding-bottom: 1rem;
+}
+
+.projects--icons {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* 
