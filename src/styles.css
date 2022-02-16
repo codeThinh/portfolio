@@ -347,7 +347,6 @@ Hero CSS
   min-height: 100vh;
   max-width: 90%;
   text-align: left;
-  background: white;
 }
 
 .hero--container h4 {
@@ -410,7 +409,6 @@ About CSS
   flex-direction: row;
   min-height: 100vw;
   width: 90%;
-  background: green;
 }
 
 .about--container {
@@ -421,7 +419,6 @@ About CSS
   align: center;
   text-align: left;
   padding: 4rem;
-  background: red;
 }
 
 .about--img img {
