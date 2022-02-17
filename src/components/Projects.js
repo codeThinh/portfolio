@@ -7,7 +7,7 @@ export default function Projects(props) {
             <h4 id="projects">Featured Projects</h4>
             <div className="projects--card">
                 <div className="projects--img-border">
-                    <img src="https://www.clipartmax.com/png/middle/416-4162373_school-calendar-calendar-clipart-transparent-background.png" className="projects--img" />
+                    {/* <img src="https://www.clipartmax.com/png/middle/416-4162373_school-calendar-calendar-clipart-transparent-background.png" className="projects--img" /> */}
                 </div>
                 <div className="projects--info">
                     <h4>Coming Soon:</h4>
@@ -22,7 +22,7 @@ export default function Projects(props) {
 
             <div className="projects--card">
                 <div className="projects--img-border">
-                    <img src="https://www.citypng.com/public/uploads/preview/-11597192000cvdbhtccse.png" className="projects--img" />
+                    {/* <img src="https://www.citypng.com/public/uploads/preview/-11597192000cvdbhtccse.png" className="projects--img" /> */}
                 </div>
                 <div className="projects--info">
                     <h4>Coming Soon:</h4>
@@ -37,7 +37,7 @@ export default function Projects(props) {
 
             <div className="projects--card">
                  <div className="projects--img-border">
-                    <img src="https://toppng.com/uploads/preview/rest-api-icon-rest-api-icon-11553510526uqs2ynyga2.png" className="projects--img" />
+                    {/* <img src="https://toppng.com/uploads/preview/rest-api-icon-rest-api-icon-11553510526uqs2ynyga2.png" className="projects--img" /> */}
                 </div>
                 <div className="projects--info">
                     <h4>Coming Soon:</h4>

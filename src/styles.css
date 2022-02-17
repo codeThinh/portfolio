@@ -139,12 +139,12 @@ Header CSS
 */
 
 .header--container {
-  width: 100%;
+  width: 100vw;
 }
 
 header {
   background-color: var(--tertiary-color);
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -260,11 +260,12 @@ SideDrawer
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-top: 3rem;
+  margin: 5rem 2rem;
+  font-size: 2rem;
+  gap: 1rem;
 }
 
 .side-drawer--container li {
-  margin: 1rem 1rem;
 }
 
 .backdrop {
@@ -370,7 +371,7 @@ Hero CSS
   font-size: 1rem;
 }
 
-.hero--container button {
+.button {
   color: var(--primary-color);
   background: none;
   border: 1px solid var(--primary-color);
@@ -378,7 +379,7 @@ Hero CSS
   padding: 1rem;
 }
 
-.hero--containe button {
+.button {
   color: var(--primary-color);
   background: none;
   border: 1px solid var(--primary-color);
@@ -386,7 +387,7 @@ Hero CSS
   padding: 1rem;
 }
 
-.hero--containe button:hover {
+.button:hover {
   background: rgba(45, 129, 184, 0.22);
   transition: 0.4s;
   cursor: pointer;
@@ -407,25 +408,38 @@ About CSS
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  min-height: 100vw;
+  max-height: 100vw;
   width: 90%;
 }
 
 .about--container {
-  max-width: 90%;
+  max-width: 50%;
   font-size: 1.5rem;
   display: flex;
   flex-flow: column wrap-reverse;
-  align: center;
   text-align: left;
   padding: 4rem;
+}
+
+@media (max-width: 768px) {
+  .about--container {
+    max-width: 50%;
+  }
+  .about {
+    max-height: none;
+  }
 }
 
 .about--img img {
   max-width: 90%;
   border-radius: 50%;
   border: 0.25rem solid var(--accent-color);
-  margin: 5rem;
+  margin: 5rem 0;
+}
+
+.fa-brands {
+  font-size: 2rem;
+  margin-right: 1rem;
 }
 
 /* 
@@ -434,6 +448,7 @@ Projects CSS
 
 #projects {
   padding-top: 4rem;
+  max-width: 100%;
 }
 
 .projects--container {
@@ -466,6 +481,8 @@ Projects CSS
   background: var(--secondary-color);
   transition: 0.5s;
   margin: 1rem;
+  height: 25rem;
+  width: 25rem;
 }
 
 .projects--img-border:hover {
@@ -475,8 +492,7 @@ Projects CSS
 }
 
 .projects--img {
-  width: 500px;
-  max-width: 90%;
+  height: 30rem;
   background: transparent;
 }
 
@@ -506,11 +522,18 @@ Projects CSS
 }
 
 /* 
-Footer CSS 
+contact 
 */
 
 #contact {
   height: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact > h4 {
+  margin-bottom: 3rem;
 }
 
 /* 
@@ -519,7 +542,7 @@ Footer CSS
 
 #footer {
   background: var(--accent-color);
-  width: 100%;
+  width: 100vw;
   height: 1.5rem;
   position: fixed;
   left: 0;
